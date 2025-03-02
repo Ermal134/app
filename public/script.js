@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 // button redirect to contact us page
 document.getElementById('getStartedButton').addEventListener('click', function() {
-    window.location.href = 'contactUs.html';
+    window.location.href = './public/contactUs.html';
 });
 
 
