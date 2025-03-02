@@ -1,4 +1,3 @@
-// routes/bookings.js
 const express = require('express');
 const router = express.Router();
 const Booking = require('../models/Booking');
@@ -67,14 +66,14 @@ We look forward to assisting you. If you need to reschedule or cancel, please co
 Best regards,  
 The Home Inspection Team  
 Home Inspection Company  
-(555) 123-4567 | support@homeinspectioncompany.com
+(555) 123-4567 | inspector@proberightinspections.com
             `
         };
 
         // Email to the Company
         const companyEmail = {
             from: process.env.EMAIL_USER,
-            to: 'team@homeinspectioncompany.com', // Replace with actual company email
+            to: 'zinaeduart@gmail.com', // Replace with actual company email
             subject: `New Booking - ${date} at ${time}`,
             text: `
 Hello Team,
@@ -108,45 +107,3 @@ Home Inspection Company
 });
 
 module.exports = router;
-
-// // Add this to your existing routes in routes/bookings.js
-
-// router.post('/api/bookings', async (req, res) => {
-//     try {
-//         const { date, time, fullName, phone, email, address } = req.body;
-
-//         // Validate input
-//         if (!date || !time || !fullName || !phone || !email || !address) {
-//             return res.status(400).json({ error: 'All fields are required' });
-//         }
-
-//         // Check if the slot is already booked
-//         const existingBooking = await Booking.findOne({ date, time });
-//         if (existingBooking) {
-//             return res.status(400).json({ error: 'This time slot is already booked' });
-//         }
-
-//         // Create new booking
-//         const booking = new Booking({ date, time, fullName, phone, email, address });
-//         await booking.save();
-
-//         // Send user email
-//         await transporter.sendMail({
-//             to: email,
-//             subject: 'Your Home Inspection Booking Confirmation',
-//             text: `Dear ${fullName},\n\nThank you for scheduling a home inspection with us! Below are the details of your appointment:\n\nDate: ${date}\nTime: ${time}\nAddress: ${address}\nContact Phone: ${phone}\nEmail: ${email}\n\nWe look forward to assisting you. If you need to reschedule or cancel, please contact us at support@homeinspectioncompany.com or call (555) 123-4567.\n\nBest regards,\nThe Home Inspection Team\nHome Inspection Company\n(555) 123-4567 | support@homeinspectioncompany.com`
-//         });
-
-//         // Send company email
-//         await transporter.sendMail({
-//             to: 'team@homeinspectioncompany.com',
-//             subject: `New Booking - ${date} at ${time}`,
-//             text: `Hello Team,\n\nA new home inspection booking has been scheduled. Please find the details below:\n\nCustomer Name: ${fullName}\nDate: ${date}\nTime: ${time}\nAddress: ${address}\nPhone: ${phone}\nEmail: ${email}\n\nPlease assign an inspector and ensure availability for this appointment. Contact the customer if any clarification is needed.\n\nRegards,\nBooking System\nHome Inspection Company`
-//         });
-
-//         res.status(201).json({ message: 'Booking confirmed', booking });
-//     } catch (error) {
-//         console.error('Error creating booking:', error);
-//         res.status(500).json({ error: 'Server error' });
-//     }
-// });

@@ -22,7 +22,7 @@ p {
 }
 .hero {
     position: relative;
-    background-image: url('../images/home_inspection.jpeg');
+    background-image: url('../../images/home_inspection.jpeg');
     background-size: cover;
     background-position: center;
     color: rgb(228, 227, 227);
