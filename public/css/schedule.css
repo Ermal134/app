@@ -1,0 +1,28 @@
+ /* Basic styling for time slot buttons */
+ #time-slots button {
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #f0f0f0; /* Default background */
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+#time-slots button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+/* Styling for selected time slot button */
+#time-slots button.selected {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text for contrast */
+}
+/* Styling for the form */
+#booking-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    /* width: 300px; */
+}
+#booking-form input {
+    margin-bottom: 10px;
+    padding: 5px;
+}

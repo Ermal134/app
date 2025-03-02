@@ -8,7 +8,8 @@
     <meta name="description" content="Professional home and commercial inspection services. | Probe Right Inspection | Home inspection company | Dallas | Fort-Worth | Texas" />
     <meta name="keywords" content="Home inspection | Home inspection scheduling | home inspection incuiries | service provider | home inspection | commercial inspection | environmental assessment">
     <meta name="author" content="Probe Right Inspection">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/schedule.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     
@@ -17,34 +18,7 @@
     <!-- Include FullCalendar JS -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js'></script>
     <style>
-        /* Basic styling for time slot buttons */
-        #time-slots button {
-            margin: 5px;
-            padding: 5px 10px;
-            background-color: #f0f0f0; /* Default background */
-            border: 1px solid #ccc;
-            cursor: pointer;
-        }
-        #time-slots button:disabled {
-            background-color: #cccccc;
-            cursor: not-allowed;
-        }
-        /* Styling for selected time slot button */
-        #time-slots button.selected {
-            background-color: #4CAF50; /* Green background */
-            color: white; /* White text for contrast */
-        }
-        /* Styling for the form */
-        #booking-form {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            width: 300px;
-        }
-        #booking-form input {
-            margin-bottom: 10px;
-            padding: 5px;
-        }
+       
     </style>
 </head>
 <body>
@@ -55,8 +29,6 @@
     </header>
     <!-- Calendar container -->
     <div id='calendar'></div>
-    <!-- Container for displaying time slots -->
-    <div id='time-slots' style="display: none;"></div>
     <!-- Form without the Book Appointment button -->
     <form id='booking-form'>
         <input type='text' id='fullName' placeholder='Enter your full name' required />
@@ -64,6 +36,8 @@
         <input type='email' id='email' placeholder='Enter your email' required />
         <input type='text' id='address' placeholder='Enter your home address' required />
     </form>
+    <!-- Container for displaying time slots -->
+    <div id='time-slots' style="display: none;"></div>
     <div id="booking-confirmation" style="display: none;"></div>
 
     <script>
